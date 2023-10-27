@@ -162,8 +162,8 @@
                 Belum Punya Akun? <a href="{{ route('register') }}">Buat Akun</a>
             </div>
             <div class="simple-footer">
-                Made With ♥ by <a href="https://www.instagram.com/berkahbekhan.inc/"><text>Mohammad Subkhan
-                        @berkahbekhan.inc</text></a>
+                Made With ♥ by <a href="https://rentcon.id/"><text>RENTCON.ID
+                </text></a>
               
                 <script>
                     document.write(new Date().getFullYear())
