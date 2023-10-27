@@ -162,12 +162,11 @@
                 Belum Punya Akun? <a href="{{ route('register') }}">Buat Akun</a>
             </div>
             <div class="simple-footer">
-                Made With ♥ by <a href="https://rentcon.id/"><text>RENTCON.ID
-                </text></a>
-              
-                <script>
+                Copyright &copy;  <script>
                     document.write(new Date().getFullYear())
-                </script>
+                </script> <a href="https://rentcon.id/"><text>RENTCON.ID
+                </text></a> All rights reserved.
+                
             </div>
         </div>
     </div>

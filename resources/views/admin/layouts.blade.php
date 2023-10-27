@@ -148,14 +148,12 @@
 
         <footer class="main-footer">
             <div class="footer-left">
-                Made With ♥ by <a href="https://rentcon.id/"><text>RENTCON.ID
-                    </text></a>
-            </div>
-            <div class="footer-right">
-                <script>
+                Copyright &copy;  <script>
                     document.write(new Date().getFullYear())
-                </script>
+                </script> <a href="https://rentcon.id/"><text>RENTCON.ID
+                </text></a> All rights reserved.
             </div>
+           
         </footer>
     </div>
 
