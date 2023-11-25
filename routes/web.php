@@ -7,7 +7,7 @@ use App\Models\BarangSuratJalan;
 use App\Models\SuratJalan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-// use QrCode;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('barang.index');
 });
 
 Route::get('cetak-surat-jalan/{id}', [SuratJalanController::class, 'printSurat'])->name('print.surat-jalan');
@@ -34,7 +34,11 @@ Route::get('data-barang', function () {
 })->name('get.barang');
 
 Route::get('data-barang/{id}', function ($id) {
-    return view('show-qr', ['data_qr' => env('APP_URL') . 'info-barang/' . $id]);
+    $barang = Barang::findOrFail($id);
+    return view('show-qr', [
+        'data_qr' => env('APP_URL') . 'info-barang/' . $id,
+        'nama_barang' => $barang->nama_mesin
+    ]);
 });
 
 Route::get('info-barang/{id}', [BarangController::class, 'qrScanResult'])->name('scan.result');

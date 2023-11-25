@@ -369,12 +369,7 @@
                         data: 'id',
                         render: function(data, type, full, meta) {
                             return `
-                            <div class="row w-100">
-                           <div class="col-12 d-flex justify-content-between">
-                            <a href="/cetak-surat-jalan/${data}" target="_blank" class="btn btn-lg btn-primary"><i class="fas fa-print"></i></a>
-                            <a href="/pdf-surat-jalan/${data}" target="_blank" class="btn btn-lg btn-danger"><i class="fas fa-pdf"></i></a>
-                           </div>
-                     </div>`
+                            <a href="/cetak-surat-jalan/${data}" target="_blank" class="btn btn-lg btn-primary"><i class="fas fa-print"></i></a>`
                         },
                     },
                     {
