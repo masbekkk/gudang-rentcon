@@ -52,10 +52,10 @@
 				<h6 class="fw-bold mb-4 text-end">
 					RENTCON
 				</h6>
-				<p class="mb-0 fs-small text-end">Ruko gempol interchange No.14 Ds. legok kec. Gempol kab Pasuruan jawa
-					timu</p>
+				<p class="mb-0 fs-small text-end">Ruko Gempol Interchange No.14, Ds. legok, Kec. Gempol, Kab. Pasuruan Jawa
+					Timur</p>
 				<p class="mb-0 fs-small text-end">Telp: 082330390941</p>
-				<p class="mb-0 fs-small text-end">Email: rentcin.jatim@gmail.com</p>
+				<p class="mb-0 fs-small text-end">Email: rentcon.jatim@gmail.com</p>
 			</div>
 		</div>
         <h3 class="fw-bold text-center mb-0">SURAT JALAN</h3>
