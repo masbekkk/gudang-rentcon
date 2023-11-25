@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('barang_id')->unsigned();
             $table->bigInteger('surat_id')->unsigned();
+            $table->string('lama_sewa')->nullable();
             $table->integer('jumlah_barang');
             $table->foreign('barang_id')->references('id')->on('barangs')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('surat_id')->references('id')->on('surat_jalans')->onUpdate('cascade')->onDelete('cascade');

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('pic_penerima');
             $table->string('no_referensi');
             $table->date('tanggal');
+            $table->string('pesan');
             $table->string('disiapkan');
             $table->string('dikirim');
             $table->string('diterima');

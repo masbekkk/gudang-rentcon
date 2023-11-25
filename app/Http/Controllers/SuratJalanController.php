@@ -22,6 +22,7 @@ class SuratJalanController extends Controller
         $dataSuratJalan->pic_penerima = $request->pic_penerima;
         $dataSuratJalan->no_referensi = $request->no_referensi;
         $dataSuratJalan->tanggal = $request->tanggal;
+        $dataSuratJalan->pesan = $request->pesan;
         $dataSuratJalan->disiapkan = $request->disiapkan;
         $dataSuratJalan->dikirim = $request->dikirim;
         $dataSuratJalan->diterima = $request->diterima;
@@ -42,6 +43,7 @@ class SuratJalanController extends Controller
                 $dataRelasi = new BarangSuratJalan();
                 $dataRelasi->barang_id = $request->{'barang_' . $i};
                 $dataRelasi->surat_id = $idSuratJalan;
+                $dataRelasi->lama_sewa = $request->{'lama_sewa_' . $i};
                 $dataRelasi->jumlah_barang = $request->{'jml_brg_' . $i};
                 $dataRelasi->save();
             }

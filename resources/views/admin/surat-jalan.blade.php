@@ -53,6 +53,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Pesan</label>
+                            <input type="text" id="pesan" name="pesan" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
                             <label>Disiapkan Oleh</label>
                             <input type="text" id="disiapkan" name="disiapkan" class="form-control" required>
                         </div>
@@ -76,9 +81,15 @@
                             </div>
                             <div class="form-group col">
                                 <label for="jml_brg_1">Jumlah</label>
+                                {{-- <button type="button" id="addBarangForm" class="btn btn-warning float-right"><i
+                                        class="fas fa-plus"></i></button> --}}
+                                <input type="number" class="form-control" id="jml_brg_1" name="jml_brg_1" required>
+                            </div>
+                            <div class="form-group col">
+                                <label for="jml_brg_1">Lama Sewa</label>
                                 <button type="button" id="addBarangForm" class="btn btn-warning float-right"><i
                                         class="fas fa-plus"></i></button>
-                                <input type="number" class="form-control" id="jml_brg_1" name="jml_brg_1" required>
+                                <input type="text" class="form-control" id="lama_sewa_1" name="lama_sewa_1" required>
                             </div>
 
                         </div>
@@ -296,8 +307,13 @@
                 </div>
                 <div class="form-group col">
                     <label for="jml_brg_1">Jumlah</label>
-                    <button class="removeBarangForm btn btn-danger float-right" type="button"><i class="fas fa-minus"></i></button>
+                    
                     <input type="number" class="form-control" id="jml_brg_${idInputBarang}" name="jml_brg_${idInputBarang}" required>
+                </div>
+                <div class="form-group col">
+                    <label for="jml_brg_1">Lama Sewa</label>
+                    <button class="removeBarangForm btn btn-danger float-right" type="button"><i class="fas fa-minus"></i></button>
+                    <input type="text" class="form-control" id="lama_sewa_${idInputBarang}" name="lama_sewa_${idInputBarang}" required>
                 </div>
               
             </div>

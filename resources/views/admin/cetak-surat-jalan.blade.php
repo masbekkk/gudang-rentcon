@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat Jalan</title>
+    <title>Surat Jalan Kepada {{ $data->penerima }} Up: {{ $data->pic_penerima }}</title>
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" crossorigin="anonymous" />
 
@@ -86,6 +86,9 @@
                 <th class="p-2 fs-small fw-bold" style="width: 29%;">
                     Deskripsi
                 </th>
+                <th class="p-2 fs-small fw-bold" style="width: 29%;">
+                    Lama Sewa
+                </th>
                 <th class="p-2 text-center fs-small fw-bold" style="width: 11%;">
                     Kuantitas
                 </th>
@@ -96,6 +99,7 @@
                         {{ $dataBSJ->barang->nama_mesin }}
                     </th>
                     <th class="p-2 fs-small fw-bold">{{ $dataBSJ->barang->spesifikasi_mesin }}</th>
+                    <th class="p-2 fs-small fw-bold">{{ $dataBSJ->lama_sewa }}</th>
                     <th class="p-2 fs-small text-center">
                         {{ $dataBSJ->jumlah_barang }} pcs
                     </th>
@@ -109,7 +113,7 @@
                     Pesan
                 </th>
                 <th class="p-2 fs-small">
-                    Transfer via BCA 411-081-9361 A.N Muhammad Budi Hendrawan Sutopo
+                    {{ $data->pesan }}
                 </th>
             </tr>
         </table>

@@ -166,7 +166,7 @@
                     targets: [5],
                     data: 'id',
                     render: function(data, type, full, meta) {
-                        return `<a href="/data-barang/${data}" target="_blank" class="btn btn-primary">Cetak QR</a>`
+                        return `<a href="/qr-barang/${data}" target="_blank" class="btn btn-primary">Cetak QR</a>`
                     },
                 },    
                 {

@@ -12,6 +12,10 @@
     <button id="btn-print" style="display: block" onclick="downloadQR()">Download QR</button>
     <script type="text/javascript">
         function downloadQR() {
+            let canvas = document.getElementById("canvas");
+            // Clear the contents of the canvas
+            canvas.innerHTML = "";
+
             const qrCode = new QRCodeStyling({
                 width: 200,
                 height: 200,
@@ -31,7 +35,7 @@
                 }
             });
 
-            qrCode.append(document.getElementById("canvas"));
+            qrCode.append(canvas);
             // qrCode.print();
             qrCode.download({
                 name: "QR-{{ $nama_barang }}",

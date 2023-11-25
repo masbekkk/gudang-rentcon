@@ -33,7 +33,7 @@ Route::get('data-barang', function () {
     return response()->json(['data' => Barang::all()]);
 })->name('get.barang');
 
-Route::get('data-barang/{id}', function ($id) {
+Route::get('qr-barang/{id}', function ($id) {
     $barang = Barang::findOrFail($id);
     return view('show-qr', [
         'data_qr' => env('APP_URL') . 'info-barang/' . $id,
