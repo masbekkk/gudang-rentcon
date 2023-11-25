@@ -51,12 +51,16 @@ class SuratJalanController extends Controller
     function printSurat($id) {
         $data = SuratJalan::findOrFail($id);
         $barangSuratJalan = BarangSuratJalan::where('surat_id', $id)->with('barang')->get();
-
-        // $pdfFile = Pdf::loadView('admin.cetak-surat-jalan', ['data' => $data, 'barangSuratJalan' => $barangSuratJalan]);
-        // $pdfFile->setPaper('a4', 'potrati'); 
-        // return $pdfFile->download("Surat Jalan No. Referensi: " . $data->no_referensi . ".pdf");
-
         return view('admin.cetak-surat-jalan', ['data' => $data, 'barangSuratJalan' => $barangSuratJalan]);
+    }
+
+    function printSuratDomPDF($id) {
+        $data = SuratJalan::findOrFail($id);
+        $barangSuratJalan = BarangSuratJalan::where('surat_id', $id)->with('barang')->get();
+
+        $pdfFile = Pdf::loadView('admin.cetak-surat-jalan', ['data' => $data, 'barangSuratJalan' => $barangSuratJalan]);
+        $pdfFile->setPaper('a4', 'potrati'); 
+        return $pdfFile->download("Surat Jalan No. Referensi: " . $data->no_referensi . ".pdf");
     }
 
     function destroy($id)

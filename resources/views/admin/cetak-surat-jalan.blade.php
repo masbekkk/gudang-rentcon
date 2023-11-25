@@ -35,6 +35,12 @@
             line-height: 1rem;
             font-weight: 500;
         }
+        @media print {
+            #btn-print {
+                display: none;
+                visibility: hidden;
+            }
+        }
     </style>
 </head>
 

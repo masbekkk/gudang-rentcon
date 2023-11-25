@@ -25,6 +25,7 @@ Route::get('/', function () {
 });
 
 Route::get('cetak-surat-jalan/{id}', [SuratJalanController::class, 'printSurat'])->name('print.surat-jalan');
+Route::get('pdf-surat-jalan/{id}', [SuratJalanController::class, 'printSuratDomPDF'])->name('print.surat-jalan');
 
 Auth::routes();
 
