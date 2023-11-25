@@ -58,6 +58,7 @@
 				<p class="mb-0 fs-small text-end">Email: rentcon.jatim@gmail.com</p>
 			</div>
 		</div>
+        <button id="btn-print" class="btn btn-primary" style="display: block" onclick="window.print()">Cetak</button>
         <h3 class="fw-bold text-center mb-0">SURAT JALAN</h3>
         <table class="mb-4" style="width:100%">
             <tr>
