@@ -385,7 +385,16 @@
                         data: 'id',
                         render: function(data, type, full, meta) {
                             return `
-                            <a href="/cetak-surat-jalan/${data}" target="_blank" class="btn btn-lg btn-primary"><i class="fas fa-print"></i></a>`
+                            <div class="row w-100">
+                           <div class="col-12 d-flex justify-content-between">
+                              <a class="btn btn-warning btn-sm text-white w-50 mr-1"
+                                 href="/preview-surat-jalan/${data}"
+                                 title="Preview"><i class="fas fa-eye"></i></a>
+                              <a class="btn btn-danger btn-sm text-white w-50 ml-1"
+                                 href="pdf-surat-jalan/${data}" 
+                                 title="DownloadPDF"><i class="fas fa-file-pdf"></i></a>
+                           </div>
+                     </div>`
                         },
                     },
                     {

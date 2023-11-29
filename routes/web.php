@@ -7,6 +7,7 @@ use App\Models\BarangSuratJalan;
 use App\Models\SuratJalan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Barryvdh\DomPDF\PDF;
 
 
 /*
@@ -24,8 +25,13 @@ Route::get('/', function () {
     return redirect()->route('barang.index');
 });
 
-Route::get('cetak-surat-jalan/{id}', [SuratJalanController::class, 'printSurat'])->name('print.surat-jalan');
-Route::get('pdf-surat-jalan/{id}', [SuratJalanController::class, 'printSuratDomPDF'])->name('print.surat-jalan');
+Route::get('test/preview-surat-jalan', function() {
+    return view('admin.tes-dompdf');
+})->name('test.pdf');
+Route::get('test/pdf-surat-jalan', [SuratJalanController::class, 'testDOMPDF']);
+
+Route::get('preview-surat-jalan/{id}', [SuratJalanController::class, 'printSurat'])->name('preview.surat-jalan');
+Route::get('pdf-surat-jalan/{id}', [SuratJalanController::class, 'printSuratDomPDF'])->name('download.surat-jalan');
 
 Auth::routes();
 

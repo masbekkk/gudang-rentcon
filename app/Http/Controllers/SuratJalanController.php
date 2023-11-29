@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BarangSuratJalan;
 use App\Models\SuratJalan;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\Pdf;
+use PDF;
 
 class SuratJalanController extends Controller
 {
@@ -53,16 +53,28 @@ class SuratJalanController extends Controller
     function printSurat($id) {
         $data = SuratJalan::findOrFail($id);
         $barangSuratJalan = BarangSuratJalan::where('surat_id', $id)->with('barang')->get();
-        return view('admin.cetak-surat-jalan', ['data' => $data, 'barangSuratJalan' => $barangSuratJalan]);
+        return view('admin.tes-dompdf', ['data' => $data, 'barangSuratJalan' => $barangSuratJalan]);
     }
 
     function printSuratDomPDF($id) {
         $data = SuratJalan::findOrFail($id);
         $barangSuratJalan = BarangSuratJalan::where('surat_id', $id)->with('barang')->get();
 
-        $pdfFile = Pdf::loadView('admin.cetak-surat-jalan', ['data' => $data, 'barangSuratJalan' => $barangSuratJalan]);
-        $pdfFile->setPaper('a4', 'potrati'); 
+        $pdfFile = PDF::loadView('admin.tes-dompdf', [
+            'data' => $data, 
+            'barangSuratJalan' => $barangSuratJalan
+        ]);
+        // $pdfFile->setPaper('a4', 'potrati'); 
         return $pdfFile->download("Surat Jalan No. Referensi: " . $data->no_referensi . ".pdf");
+    }
+
+    function testDOMPDF() {
+        $pdfFile = PDF::loadView('admin.tes-dompdf', [
+            // 'data' => $data, 
+            // 'barangSuratJalan' => $barangSuratJalan
+        ]);
+        // $pdfFile->setPaper('a4', 'potrati'); 
+        return $pdfFile->download("Surat Jalan No. Referensi.pdf");
     }
 
     function destroy($id)
