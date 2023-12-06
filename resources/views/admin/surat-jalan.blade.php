@@ -120,6 +120,7 @@
                     <p><strong>Disiapkan:</strong> <text id="disiapkan_detail"></text></p>
                     <p><strong>Dikirim:</strong> <text id="dikirim_detail"></text></p>
                     <p><strong>Diterima:</strong> <text id="diterima_detail"></text></p>
+                    <p><strong>Pesan:</strong> <text id="pesan_detail"></text></p>
                     <table class="table">
                         <thead>
                             <tr>
@@ -154,43 +155,7 @@
                 <div class="modal-body">
                     <h1>Coming Soon After Fix No Revision</h1>
                 </div>
-                {{-- <form id="form_edit_Barang" method="POST" action="" enctype="multipart/form-data">
-                    @csrf
-
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editBarangModalLabel">Edit Surat Jalan</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Nama Mesin</label>
-                            <input type="text" id="nama_mesin_edit" name="nama_mesin_edit" class="form-control"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label>Lokasi Mesin</label>
-                            <input type="text" id="lokasi_mesin_edit" name="lokasi_mesin_edit" class="form-control"
-                                required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Kondisi Mesin</label>
-                            <input type="text" id="kondisi_mesin_edit" name="kondisi_mesin_edit" class="form-control"
-                                required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Spesifikasi Mesin</label>
-                            <textarea id="spesifikasi_mesin_edit" class="form-control" name="spesifikasi_mesin_edit" required></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                    </div>
-                </form> --}}
+ 
             </div>
         </div>
     </div>
@@ -269,6 +234,7 @@
                 $('#disiapkan_detail').text(button.data('disiapkan'))
                 $('#dikirim_detail').text(button.data('dikirim'))
                 $('#diterima_detail').text(button.data('diterima'))
+                $('#pesan_detail').text(button.data('pesan'))
 
                 $.ajax({
                     url: 'barang-by-id-surat/' + button.data('idSurat'),
@@ -377,7 +343,7 @@
                         targets: [5],
                         data: 'id',
                         render: function(data, type, full, meta) {
-                            return `<a href="#detailData" data-toggle="modal" data-target="#detailModal" data-id-surat="${data}" data-disiapkan="${full.disiapkan}" data-dikirim="${full.dikirim}" data-diterima="${full.diterima}" class="btn btn-primary"><i class="fas fa-eye"></i></a>`
+                            return `<a href="#detailData" data-toggle="modal" data-target="#detailModal" data-id-surat="${data}" data-disiapkan="${full.disiapkan}" data-dikirim="${full.dikirim}" data-diterima="${full.diterima}" data-pesan="${full.pesan}" class="btn btn-primary"><i class="fas fa-eye"></i></a>`
                         },
                     },
                     {
@@ -385,16 +351,9 @@
                         data: 'id',
                         render: function(data, type, full, meta) {
                             return `
-                            <div class="row w-100">
-                           <div class="col-12 d-flex justify-content-between">
-                              <a class="btn btn-warning btn-sm text-white w-50 mr-1"
+                            <a class="btn-lg btn-primary"
                                  href="/preview-surat-jalan/${data}"
-                                 title="Preview"><i class="fas fa-eye"></i></a>
-                              <a class="btn btn-danger btn-sm text-white w-50 ml-1"
-                                 href="pdf-surat-jalan/${data}" 
-                                 title="DownloadPDF"><i class="fas fa-file-pdf"></i></a>
-                           </div>
-                     </div>`
+                                 title="Preview"><i class="fas fa-print"></i></a>`
                         },
                     },
                     {

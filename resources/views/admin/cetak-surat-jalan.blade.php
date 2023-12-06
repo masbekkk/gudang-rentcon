@@ -46,7 +46,7 @@
 
 <body class="min-vh-100 min-vw-100">
     <div class="container-print">
-        <img style="width: 12rem; height: 12rem;" src="{{ asset('logo_rentcon.jpeg') }}" alt="RENTCON ICON">
+        <img style="width: 12rem; height: 12rem;" src="{{ asset('logo/logo_rentcon.jpeg') }}" alt="RENTCON ICON">
         <button id="btn-print" style="display: block" onclick="window.print()">Cetak</button>
         <div class="mt-4 mb-3">
             <h6 class="fw-bold mb-4">
@@ -155,9 +155,9 @@
         </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            window.print();
-        });
+        // document.addEventListener("DOMContentLoaded", function(event) {
+        //     window.print();
+        // });
     </script>
 
 </body>

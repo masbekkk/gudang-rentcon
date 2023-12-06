@@ -53,7 +53,7 @@ class SuratJalanController extends Controller
     function printSurat($id) {
         $data = SuratJalan::findOrFail($id);
         $barangSuratJalan = BarangSuratJalan::where('surat_id', $id)->with('barang')->get();
-        return view('admin.tes-dompdf', ['data' => $data, 'barangSuratJalan' => $barangSuratJalan]);
+        return view('admin.cetak-surat-jalan', ['data' => $data, 'barangSuratJalan' => $barangSuratJalan]);
     }
 
     function printSuratDomPDF($id) {
