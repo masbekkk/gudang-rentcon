@@ -46,19 +46,18 @@
 
 <body class="min-vh-100 min-vw-100">
     <div class="container-print">
-        <div class="mb-4 d-flex flex-wrap justify-content-between">
-			<img style="width: 8rem; height: 8rem;" src="{{ asset('logo_rentcon.jpeg')}}" alt="RENTCON ICON">
-			<div class="pt-3">
-				<h6 class="fw-bold mb-4 text-end">
-					RENTCON
-				</h6>
-				<p class="mb-0 fs-small text-end">Ruko Gempol Interchange No.14, Ds. legok, Kec. Gempol, Kab. Pasuruan Jawa
-					Timur</p>
-				<p class="mb-0 fs-small text-end">Telp: 082330390941</p>
-				<p class="mb-0 fs-small text-end">Email: rentcon.jatim@gmail.com</p>
-			</div>
-		</div>
-        <h3 class="fw-bold text-center mb-0">SURAT JALAN</h3>
+        <img style="width: 12rem; height: 12rem;" src="{{ asset('logo_rentcon.jpeg') }}" alt="RENTCON ICON">
+        <button id="btn-print" style="display: block" onclick="window.print()">Cetak</button>
+        <div class="mt-4 mb-3">
+            <h6 class="fw-bold mb-4">
+                RENTCON
+            </h6>
+            <p class="mb-0 fs-small">Ruko Gempol Interchange No.14 Ds. Legok Kec. Gempol</p>
+            <p class="mb-0 fs-small">Kab. Pasuruan, Jawa Timur</p>
+            <p class="mb-0 fs-small">Telp: 082330390941</p>
+            <p class="mb-0 fs-small">Email: rentcon.jatim@gmail.com</p>
+        </div>
+        <h3 class="fw-bold text-end mb-0">SURAT JALAN</h3>
         <table class="mb-4" style="width:100%">
             <tr>
                 <th class="py-3 px-3 w-50">
