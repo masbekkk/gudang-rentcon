@@ -153,7 +153,82 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h1>Coming Soon After Fix No Revision</h1>
+                    <div class="form-group">
+                        <label>Penerima</label>
+                        <input type="text" id="penerima_edit" name="penerima" class="form-control" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Alamat Penerima</label>
+                            <input type="text" id="alamat_penerima_edit" name="alamat_penerima" class="form-control"
+                                required>
+                        </div>
+                        <div class="form-group col">
+                            <label>Kabupaten, Provinsi Penerima</label>
+                            <input type="text" id="kab_prov_penerima_edit" name="kab_prov_penerima" class="form-control"
+                                required>
+                        </div>
+                        <div class="form-group col">
+                            <label>PIC Penerima</label>
+                            <input type="text" id="pic_penerima_edit" name="pic_penerima" class="form-control" required>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>No. Referensi</label>
+                        <input type="text" id="no_referensi_edit" name="no_referensi" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <input type="date" id="tanggal_edit" name="tanggal" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pesan</label>
+                        <input type="text" id="pesan_edit" name="pesan" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Disiapkan Oleh</label>
+                        <input type="text" id="disiapkan_edit" name="disiapkan" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dikirim Oleh</label>
+                        <input type="text" id="dikirim_edit" name="dikirim" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Diterima Oleh</label>
+                        <input type="text" id="diterima_edit" name="diterima" class="form-control" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="barang">Barang</label>
+                            <b class="text-danger">* Wajib Diisi</b>
+                            <select class="form-control dropdownDataBarang" id="barang_1" name="barang_1" required>
+                                <option selected>Pilih Barang</option>
+                            </select>
+                        </div>
+                        <div class="form-group col">
+                            <label for="jml_brg_1">Jumlah</label>
+                            {{-- <button type="button" id="addBarangForm" class="btn btn-warning float-right"><i
+                                    class="fas fa-plus"></i></button> --}}
+                            <input type="number" class="form-control" id="jml_brg_1" name="jml_brg_1" required>
+                        </div>
+                        <div class="form-group col">
+                            <label for="jml_brg_1">Lama Sewa</label>
+                            <button type="button" id="addBarangForm" class="btn btn-warning float-right"><i
+                                    class="fas fa-plus"></i></button>
+                            <input type="text" class="form-control" id="lama_sewa_1" name="lama_sewa_1" required>
+                        </div>
+
+                    </div>
+                    <input type="hidden" name="jml_barang" id="jml_barang_input">
+                    <div class="input-barang-container"></div>
                 </div>
  
             </div>

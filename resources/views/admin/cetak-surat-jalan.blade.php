@@ -35,8 +35,36 @@
             line-height: 1rem;
             font-weight: 500;
         }
+        .logo {
+            width: 8rem;
+            height: 8rem;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #f4511e;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {
+            background-color: #fc7c54
+        }
+
+        .button:active {
+            background-color: #fc7c54;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
         @media print {
-            #btn-print {
+            .button {
                 display: none;
                 visibility: hidden;
             }
@@ -46,17 +74,20 @@
 
 <body class="min-vh-100 min-vw-100">
     <div class="container-print">
-        <img style="width: 12rem; height: 12rem;" src="{{ asset('logo/logo_rentcon.jpeg') }}" alt="RENTCON ICON">
-        <button id="btn-print" style="display: block" onclick="window.print()">Cetak</button>
-        <div class="mt-4 mb-3">
-            <h6 class="fw-bold mb-4">
-                RENTCON
-            </h6>
-            <p class="mb-0 fs-small">Ruko Gempol Interchange No.14 Ds. Legok Kec. Gempol</p>
-            <p class="mb-0 fs-small">Kab. Pasuruan, Jawa Timur</p>
-            <p class="mb-0 fs-small">Telp: 082330390941</p>
-            <p class="mb-0 fs-small">Email: rentcon.jatim@gmail.com</p>
+        <div class="mb-4 d-flex justify-content-between">
+            <img class="logo" src="{{ asset('logo/logo_rentcon.jpeg') }}" alt="RENTCON ICON">
+            <div class="pt-3">
+                <h6 class="fw-bold mb-4 text-end">
+                    RENTCON
+                </h6>
+                <p class="mb-0 fs-small text-end">Ruko gempol interchange No.14 Ds. Legok Kec. Gempol Kab Pasuruan Jawa
+                    Timur</p>
+                <p class="mb-0 fs-small text-end">Telp: 082330390941</p>
+                <p class="mb-0 fs-small text-end">Email: rentconn.jatim@gmail.com</p>
+            </div>
         </div>
+        <button type="button" class="button" onclick="window.print()">
+            Cetak Surat</button>
         <h3 class="fw-bold text-end mb-0">SURAT JALAN</h3>
         <table class="mb-4" style="width:100%">
             <tr>

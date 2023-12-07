@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hosting Promo Card</title>
+    <title>Info Barang {{ $nama_mesin }}</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css?ver=1.1"
         type="text/css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -29,7 +29,7 @@
 <body>
     <div class="container mt-5">
         <div class="login-brand">
-        <img src="{{ asset('logo_rentcon.jpeg') }}" alt="logo" width="100"
+        <img src="{{ asset('logo/logo_rentcon.jpeg') }}" alt="logo" width="100"
             class="shadow-light">
             {{-- <p class="font-weight-bold">INFORMASI BARANG</p> --}}
             <p><strong>INFORMASI BARANG</strong></p>
