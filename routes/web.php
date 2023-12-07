@@ -30,7 +30,7 @@ Route::get('test/preview-surat-jalan', function() {
 })->name('test.pdf');
 Route::get('test/pdf-surat-jalan', [SuratJalanController::class, 'testDOMPDF']);
 
-Route::get('preview-surat-jalan/{id}', [SuratJalanController::class, 'printSurat'])->name('preview.surat-jalan');
+Route::get('preview-surat-jalan/{id}', [SuratJalanController::class, 'printSurat'])->name('preview.surat-jalan')->middleware('auth');
 Route::get('pdf-surat-jalan/{id}', [SuratJalanController::class, 'printSuratDomPDF'])->name('download.surat-jalan');
 
 Auth::routes();
