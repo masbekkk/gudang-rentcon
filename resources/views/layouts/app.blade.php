@@ -3,7 +3,7 @@
 
 <head>
     <title>@yield('title') | {{ env('APP_NAME') }} </title>
-    <link rel="icon" href="{{ asset('logo_rentcon.jpeg') }}" />
+    <link rel="icon" href="{{ asset('logo/logo_rentcon.jpeg') }}" />
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,8 +17,8 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/css/components.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/components.css') }}" type="text/css">
     <!-- fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@1,500&family=Kanit:wght@500&family=Oswald:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -58,9 +58,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <!-- Template JS File -->
-    <script src="js/stisla.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{asset('js/stisla.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 
     <!-- sweetalert js -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

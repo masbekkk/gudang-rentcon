@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangSuratJalanController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SuratJalanController;
 use App\Models\Barang;
 use App\Models\BarangSuratJalan;
@@ -65,6 +66,6 @@ Route::delete('delete-brg-in-surat/{idSurat}/{idBarang}', [BarangSuratJalanContr
 
 Route::resource('barang', BarangController::class)->middleware('auth');
 Route::resource('surat-jalan', SuratJalanController::class)->middleware('auth');
-// });
+Route::resource('profile', ProfileController::class)->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
