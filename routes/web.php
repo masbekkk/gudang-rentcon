@@ -33,7 +33,9 @@ Route::get('test/pdf-surat-jalan', [SuratJalanController::class, 'testDOMPDF']);
 Route::get('preview-surat-jalan/{id}', [SuratJalanController::class, 'printSurat'])->name('preview.surat-jalan')->middleware('auth');
 Route::get('pdf-surat-jalan/{id}', [SuratJalanController::class, 'printSuratDomPDF'])->name('download.surat-jalan');
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+]);
 
 Route::get('qr-barang/{id}', function ($id) {
     $barang = Barang::findOrFail($id);

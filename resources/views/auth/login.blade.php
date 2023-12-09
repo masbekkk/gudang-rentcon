@@ -159,7 +159,7 @@
                 </div>
             </div>
             <div class="mt-5 text-muted text-center">
-                Belum Punya Akun? <a href="{{ route('register') }}">Buat Akun</a>
+                {{-- Belum Punya Akun? <a href="{{ route('register') }}">Buat Akun</a> --}}
             </div>
             <div class="simple-footer">
                 Copyright &copy;  <script>
