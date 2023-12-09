@@ -1,14 +1,13 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\BarangSuratJalanController;
 use App\Http\Controllers\SuratJalanController;
 use App\Models\Barang;
 use App\Models\BarangSuratJalan;
 use App\Models\SuratJalan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Barryvdh\DomPDF\PDF;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +34,6 @@ Route::get('pdf-surat-jalan/{id}', [SuratJalanController::class, 'printSuratDomP
 
 Auth::routes();
 
-Route::get('data-barang', function () {
-    return response()->json(['data' => Barang::all()]);
-})->name('get.barang');
-
 Route::get('qr-barang/{id}', function ($id) {
     $barang = Barang::findOrFail($id);
     return view('show-qr', [
@@ -49,19 +44,24 @@ Route::get('qr-barang/{id}', function ($id) {
 
 Route::get('info-barang/{id}', [BarangController::class, 'qrScanResult'])->name('scan.result');
 
+Route::get('data-barang', function () {
+    return response()->json(['data' => Barang::all()]);
+})->name('get.barang')->middleware('auth');
+
 Route::get('data-barang-surat', function () {
     $results = BarangSuratJalan::with('barang', 'suratJalan')->orderBy('surat_id')->get();
     return response()->json(['data' => $results->groupBy('surat_id')]);
-})->name('get.barang-surat');
+})->name('get.barang-surat')->middleware('auth');
 
 Route::get('data-surat-jalan', function () {
     return response()->json(['data' => SuratJalan::all()], 200);
-})->name('get.surat-jalan');
+})->name('get.surat-jalan')->middleware('auth');
 
 Route::get('barang-by-id-surat/{id}', function ($id) {
     return response()->json(['data' => BarangSuratJalan::where('surat_id', $id)->with('barang')->get()], 200);
-});
-// Route::middleware('')->name('admin.')->group( function() {
+})->middleware('auth');
+
+Route::delete('delete-brg-in-surat/{idSurat}/{idBarang}', [BarangSuratJalanController::class, 'destroy'])->middleware('auth')->name('delete.brgInSurat');
 
 Route::resource('barang', BarangController::class)->middleware('auth');
 Route::resource('surat-jalan', SuratJalanController::class)->middleware('auth');

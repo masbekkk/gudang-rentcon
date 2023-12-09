@@ -3,7 +3,7 @@
 
 <head>
     <title>@yield('title')</title>
-    <link rel="icon" href="{{ asset('logo_rentcon.jpeg') }}" />
+    <link rel="icon" href="{{ asset('logo/logo_rentcon.jpeg') }}" />
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,8 +17,8 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/css/components.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/css/components.css') }}" type="text/css">
 
 
     <!-- fonts -->
@@ -123,13 +123,13 @@
                                     class="fas fa-layer-group"></i> <span>
                                     Barang</span></a></li>
 
-                                    <li class="menu-header">Data Surat Jalan</li>
-                                    <li class="{{ Route::is('surat-jalan.index') ? 'active' : '' }}"><a class="nav-link"
-                                            href="
+                        <li class="menu-header">Data Surat Jalan</li>
+                        <li class="{{ Route::is('surat-jalan.index') ? 'active' : '' }}"><a class="nav-link"
+                                href="
                                                 {{ route('surat-jalan.index') }}
                                                 "><i
-                                                class="fas fa-file"></i> <span>
-                                                Surat Jalan</span></a></li>
+                                    class="fas fa-file"></i> <span>
+                                    Surat Jalan</span></a></li>
                     </ul>
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
 
@@ -148,12 +148,13 @@
 
         <footer class="main-footer">
             <div class="footer-left">
-                Copyright &copy;  <script>
+                Copyright &copy;
+                <script>
                     document.write(new Date().getFullYear())
                 </script> <a href="https://rentcon.id/"><text>RENTCON.ID
-                </text></a> All rights reserved.
+                    </text></a> All rights reserved.
             </div>
-           
+
         </footer>
     </div>
 
@@ -173,9 +174,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Template JS File -->
-<script src="js/stisla.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/custom.js"></script>
+<script src="{{ asset('js/stisla.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
+<script src="{{ asset('js/custom.js') }}"></script>
 
 {{-- js datatables --}}
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
@@ -335,7 +336,8 @@
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Ada kesalahan dalam menyimpan data. Coba lagi!' + xhr.responseJSON.contents ?? "",
+                    text: 'Ada kesalahan dalam menyimpan data. Coba lagi!' + xhr.responseJSON
+                        .contents ?? "",
                 })
                 console.log("statusText: " + xhr.statusText)
                 console.log("responseTxt: " + xhr.responseText.message)
@@ -345,7 +347,7 @@
         });
     }
 
-    function deleteConfirm(event, params = null) {
+    function deleteConfirm(event, params = null, isTable = true) {
         Swal.fire({
             title: 'Konfirmasi Hapus Data!',
             text: 'Yakin ingin menghapus data?',
@@ -379,7 +381,11 @@
                         console.log(xhr.statusText + xhr.responseText)
                     },
                     success: function(data) {
-                        table.ajax.reload()
+                        if (isTable) {
+                            table.ajax.reload()
+                        }else {
+                        $(event).closest(".form-row").remove();
+                        }
                         const Toast = Swal.mixin({
                             toast: true,
                             position: 'top-end',
@@ -401,7 +407,6 @@
                 });
             }
         })
-
     }
 </script>
 <!-- Page Specific JS File -->
