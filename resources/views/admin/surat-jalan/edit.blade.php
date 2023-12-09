@@ -178,8 +178,19 @@
 
             });
 
-            $('#formEditSJ').submit(function() {
+            $('#formEditSJ').submit(function(e) {
                 $('#jml_barang_input').val(idInputBarang)
+                e.preventDefault();
+                let form = $(this);
+                var arr_params = {
+                    url: form.attr('action'),
+                    method: 'PUT',
+                    input: form.serialize(),
+                    // forms: form[0].reset(),
+                    // modal: $('#addSuratJalanModal').modal('hide'),
+                    reload: false
+                }
+                ajaxSaveDatas(arr_params)
             })
         });
     </script>
